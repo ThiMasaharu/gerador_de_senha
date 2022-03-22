@@ -45,6 +45,9 @@ def select_option(user_input):
 
 
 def generate_password(option, letters, numbers, symbols):
+    list_letters = list(string.ascii_letters)
+    list_numbers = list(string.digits)
+    list_symbols = list(string.punctuation)
     """
     -> function to generate password according to option and total of letters, numbers and symbols
     :param option: option user selected through select_option()
@@ -55,11 +58,11 @@ def generate_password(option, letters, numbers, symbols):
     """
     password = ''
     for i in range(0, letters):
-        password += random.choice(string.ascii_letters)
+        password += random.choice(list_letters)
     for i in range(0, numbers):
-        password += random.choice(string.digits)
+        password += random.choice(list_numbers)
     for i in range(0, symbols):
-        password += random.choice(string.punctuation)
+        password += random.choice(list_symbols)
     
     if option==1:   
         return password
